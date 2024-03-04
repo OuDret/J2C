@@ -29,7 +29,6 @@ module master_tb;
         data=8'b00001111;
         #800
         $display("finish");
-        $display($clog2(MESSAGE_LENGTH));
         $finish;
     end
     

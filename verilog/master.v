@@ -5,7 +5,7 @@ module master #(parameter NBITS = 8)( input wire clk,
                 output reg sda,
                 output reg scl);     
 
-	wire[NBITS-2:0] count;
+	wire[$clog2(NBITS)-1:0] count;
 	reg [NBITS-1:0] data_register;
 
 	counter c1(clk, rstn, count);
@@ -21,7 +21,6 @@ module master #(parameter NBITS = 8)( input wire clk,
 			begin
 			sda = data_register[count-1];
 			scl = clk;
-			$display("%d", count);
 			end
 	end
 
@@ -42,7 +41,7 @@ endmodule
 
 module counter #(parameter NBITS = 8) (input clk,      
                 input rstn,               
-                output reg[$clog2(NBITS)] out );     
+                output reg[$clog2(NBITS)-1:0] out );     
 
     always @ (posedge clk) begin  
         if (! rstn)  

@@ -1,5 +1,5 @@
 $date
-	Mon Mar  4 15:48:37 2024
+	Mon Mar  4 17:11:17 2024
 $end
 $version
 	Icarus Verilog
@@ -24,13 +24,13 @@ $var reg 1 % reset $end
 $upscope $end
 $scope module master_tb $end
 $scope module i2c $end
-$var wire 7 & count [6:0] $end
+$var wire 3 & count [2:0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-b0xxx &
+bx &
 0%
 x$
 x#
