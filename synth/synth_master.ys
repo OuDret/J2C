@@ -1,0 +1,19 @@
+read -sv out/master.v
+hierarchy -top master
+
+# the high-level stuff
+proc; fsm; opt; memory; opt
+
+# mapping to internal cell library
+techmap; opt
+
+# mapping flip-flops to cells.lib
+dfflibmap -liberty cells.lib
+
+# mapping logic to cells.lib
+abc -liberty cells.lib
+
+# cleanup
+clean
+
+write_verilog out/synth_master.v
