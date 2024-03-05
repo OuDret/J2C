@@ -2,4 +2,5 @@
 
 It just sends data[NBITS] bit by bit through sda wire, while scl acts as clock. Before each bits frame it sends a header so de reader can know message start. Header is about having both signals being high to then make sda fall. After that sdc will also fall and data will be send.
 
+TODO: make synthesized output to work. (bottom gtkwave window)
 ![alt text](image.png)
