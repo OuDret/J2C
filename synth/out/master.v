@@ -19,13 +19,9 @@ module master #(parameter MESSAGE_LENGTH = 8)( input wire clk,
 				if (count/2 == 0) begin
 					sda <= 1'b0;
 					data_register <= data;
-					$display("Start Patron 1");
 				end else if (count/2 > 0) begin
 					sda <= data_register[(count/2)-1];
 					scl <= 1'b1;
-					$display(count);
-					$display(data_register[(count/2)-1]);
-					$display("---");
 				end
 			end else begin
 				if (count/2 == 0) begin

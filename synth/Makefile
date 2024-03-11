@@ -17,3 +17,6 @@ out/master.v: ../verilog/master.v
 
 clean:
 	rm -f ./out/*
+
+lint:
+	verilator --lint-only -Wall out/master.v out/counter.v

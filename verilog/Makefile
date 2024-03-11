@@ -11,5 +11,6 @@ clean:
 	rm -f out/master.vcd out/master_tb
 
 lint:
-	verilator --lint-only -Wall master.v
+# https://projectf.io/posts/verilog-lint-with-verilator/
+	verilator --lint-only -Wall master.v counter.v
 
