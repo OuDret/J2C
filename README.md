@@ -4,3 +4,7 @@ It just sends data[NBITS] bit by bit through sda wire, while scl acts as clock. 
 
 TODO: make synthesized output to work. (bottom gtkwave window)
 ![alt text](image.png)
+
+
+run make lint to lint the verilog code using verilator
+https://projectf.io/posts/verilog-lint-with-verilator/

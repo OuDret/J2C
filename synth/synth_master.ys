@@ -1,4 +1,4 @@
-read -sv out/master.v
+read -sv out/master.v out/counter.v
 hierarchy -top master
 
 # the high-level stuff

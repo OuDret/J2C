@@ -18,6 +18,19 @@ module master_tb;
         $dumpvars(4, data, clk, sda, scl, reset, j2c.count, j2c.data_register);
         $display("start");
         reset = 0;
+        #30     
+        reset = 1;
+        #30
+        reset = 0;
+        data=8'b01011111;
+        #800
+        data=8'b10010101;
+        #800
+        data=8'b11110000;
+        #800;
+        data=8'b00001111;
+        #800
+        reset = 0;
         #50     
         reset = 1;
         #50
@@ -30,8 +43,21 @@ module master_tb;
         #800;
         data=8'b00001111;
         #800
-        $display("finish");
+        reset = 0;
+        #50     
+        reset = 1;
+        #50
+        reset = 0;
+        data=8'b01011111;
+        #800
+        data=8'b10010101;
+        #800
+        data=8'b11110000;
+        #800;
+        data=8'b00001111;
+        #800
         $finish;
+        $display("finish");
     end
     
 endmodule
