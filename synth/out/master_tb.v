@@ -6,7 +6,7 @@ module master_tb;
     wire sda;
     wire scl;
 
-    master i2c(clk, data, reset, sda, scl);
+    master j2c(clk, data, reset, sda, scl);
 
     initial begin     
         clk=0;
@@ -15,7 +15,7 @@ module master_tb;
 
     initial begin
         $dumpfile("out/master.vcd");
-        $dumpvars(4, data, clk, sda, scl, reset, i2c.count, i2c.data_register);
+        $dumpvars(4, data, clk, sda, scl, reset, j2c.count, j2c.data_register);
         $display("start");
         reset = 0;
         #50     
