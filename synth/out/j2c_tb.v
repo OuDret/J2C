@@ -1,4 +1,4 @@
-module master_tb;
+module j2c_tb;
     parameter MESSAGE_LENGTH = 8;
     
     reg clk, reset;
@@ -6,7 +6,7 @@ module master_tb;
     wire sda;
     wire scl;
 
-    master j2c(clk, data, reset, sda, scl);
+    j2c j2c(clk, data, reset, sda, scl);
 
     initial begin     
         clk=0;
@@ -14,7 +14,7 @@ module master_tb;
     end
 
     initial begin
-        $dumpfile("out/master.vcd");
+        $dumpfile("out/j2c.vcd");
         $dumpvars(4, data, clk, sda, scl, reset, j2c.count, j2c.data_register);
         $display("start");
         reset = 0;

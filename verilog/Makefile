@@ -1,16 +1,16 @@
-show: out/master.vcd
-	gtkwave out/master.vcd
+show: out/j2c.vcd
+	gtkwave out/j2c.vcd
 
-out/master.vcd: out/master_tb
-	vvp out/master_tb
+out/j2c.vcd: out/j2c_tb
+	vvp out/j2c_tb
 
-out/master_tb: master_tb.v master.v
-	iverilog -o out/master_tb master_tb.v master.v counter.v
+out/j2c_tb: j2c_tb.v j2c.v
+	iverilog -o out/j2c_tb j2c_tb.v j2c.v counter.v
 
 clean:
-	rm -f out/master.vcd out/master_tb
+	rm -f out/j2c.vcd out/j2c_tb
 
 lint:
 # https://projectf.io/posts/verilog-lint-with-verilator/
-	verilator --lint-only -Wall master.v counter.v
+	verilator --lint-only -Wall j2c.v counter.v
 

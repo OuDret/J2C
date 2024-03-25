@@ -1,5 +1,5 @@
-read -sv out/master.v out/counter.v
-hierarchy -top master
+read -sv out/j2c.v out/counter.v
+hierarchy -top j2c
 
 # the high-level stuff
 proc; fsm; opt; memory; opt
@@ -16,4 +16,4 @@ abc -liberty cells.lib
 # cleanup
 clean
 
-write_verilog out/synth_master.v
+write_verilog out/synth_j2c.v
